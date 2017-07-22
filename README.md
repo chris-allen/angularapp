@@ -42,10 +42,14 @@ Once the vm is up and running, you can ssh in to start a development server:
 $ cd chef
 $ vagrant ssh
 $ cd angularapp/angularapp
-$ ng serve --host 0.0.0.0
+$ npm start
+
+> angularapp@0.0.0 start /home/ubuntu/angularapp/angularapp
+> ng serve --host 0.0.0.0
+
 ** NG Live Development Server is listening on 0.0.0.0:8000, open your browser on http://localhost:8000 **
 Hash: 8578fdcb4b8c426fb2ec
-Time: 14142ms
+Time: 13697ms
 chunk    {0} polyfills.bundle.js, polyfills.bundle.js.map (polyfills) 177 kB {4} [initial] [rendered]
 chunk    {1} main.bundle.js, main.bundle.js.map (main) 5.28 kB {3} [initial] [rendered]
 chunk    {2} styles.bundle.js, styles.bundle.js.map (styles) 10.7 kB {4} [initial] [rendered]

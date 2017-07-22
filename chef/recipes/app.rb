@@ -1,4 +1,4 @@
-k#
+#
 # Cookbook Name:: chef-angularapp
 # Recipe:: app
 #
@@ -10,18 +10,20 @@ k#
 app = node.attribute?('vagrant') ? node['vagrant']['app'] : search('aws_opsworks_app').first
 environment = app['environment']
 
-# Some host OSs don't let npm create symlinks in the shared directory. This
-# stores our node_modules on the VM and simply creates a mystery symlink file
-# in the shared directory which is gitignored
-directory "/home/ubuntu/node_modules" do
-  owner "ubuntu"
-  group "ubuntu"
-  recursive true
-end
-link "/home/ubuntu/angularapp/angularapp/node_modules" do
-  owner "ubuntu"
-  group "ubuntu"
-  to "/home/ubuntu/node_modules"
+# Windows doesn't let npm create symlinks in the shared directory. This stores
+# our node_modules on the VM and simply creates a mystery symlink file in the
+# shared directory which is gitignored
+if node['vagrant']['is_windows']
+    directory "/home/ubuntu/node_modules" do
+      owner "ubuntu"
+      group "ubuntu"
+      recursive true
+    end
+    link "/home/ubuntu/angularapp/angularapp/node_modules" do
+      owner "ubuntu"
+      group "ubuntu"
+      to "/home/ubuntu/node_modules"
+    end
 end
 
 # Install package.json dependencies
