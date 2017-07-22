@@ -14,6 +14,7 @@ Once those are installed, install a couple of vagrant chef plugins:
 
 ```bash
 $ vagrant plugin install vagrant-berkshelf
+$ vagrant plugin install vagrant-fsnotify
 ```
 
 ### Development

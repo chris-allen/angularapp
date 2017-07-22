@@ -56,7 +56,6 @@
   "defaults": {
     "styleExt": "scss",
     "component": {},
-    "poll": 1000,
     "serve": {
       "port": 8000
     }
