@@ -32,10 +32,10 @@ nodejs_npm "npm-install" do
 end
 
 # Initialize gitignored config using environment
-template "/home/ubuntu/angularapp/angularapp/.config.json" do
-  source 'config.json.erb'
-  owner user
-  group user
-  mode '0644'
-  variables :environment => environment
-end
+# template "/home/ubuntu/angularapp/angularapp/.config.json" do
+#   source 'config.json.erb'
+#   owner user
+#   group user
+#   mode '0644'
+#   variables :environment => environment
+# end

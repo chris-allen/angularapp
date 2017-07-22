@@ -40,21 +40,13 @@ Vagrant.configure("2") do |config|
         'app' => {
           'domains' => ['localhost:8000'],
           'environment' => {
-            "DB_CONN_URL": "postgres://postgres:password@127.0.0.1:5432/angularapp",
-            "SECRET_KEY": "secret_key"
           }
-        }
-      },
-      "postgresql" => {
-        "password" => {
-          "postgres" => "password"
         }
       }
     }
     chef.run_list = [
       "recipe[chef-angularapp::system]",
-      "recipe[chef-angularapp::dev_database]",
-      # "recipe[chef-angularapp::app]"
+      "recipe[chef-angularapp::app]"
     ]
   end
 end
